@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thristan Edrick De Lara | Portfolio</title>
+  <meta name="description" content="Thristan Edrick De Lara: Computer Science student, web and mobile developer and machine learning enthusiast building systems that solve real community and school problems.">
+  <meta name="author" content="Thristan Edrick De Lara">
+  <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
+
+  <!-- Link previews (LinkedIn, Messenger, Facebook). These must be full addresses;
+       update them if the site ever moves to a different URL. -->
+  <link rel="canonical" href="https://veighlat-cmd.github.io/thristan-de-lara/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veighlat-cmd.github.io/thristan-de-lara/">
+  <meta property="og:title" content="Thristan Edrick De Lara | Portfolio">
+  <meta property="og:description" content="Computer Science student · Web & Mobile Developer · Machine Learning Enthusiast. Projects: CrabLens, BotoKo, EcoBayanihan and Plant Disease Detection.">
+  <meta property="og:image" content="https://veighlat-cmd.github.io/thristan-de-lara/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Thristan Edrick De Lara">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Set the theme before the page paints so there's no flash of the wrong colors -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.classList.add("js");
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <!-- Navbar -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="brand" aria-label="Thristan Edrick De Lara, back to top">
+        <span class="brand__mark" data-bind="initials">TD</span>
+        <span class="brand__name">Thristan De Lara</span>
+      </a>
+      <nav class="nav__menu" aria-label="Primary">
+        <ul class="nav__links" id="navLinks">
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#skills">Skills</a></li>
+          <li><a class="nav__link" href="#achievements">Achievements</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+          <li class="nav__menu-theme">
+            <button class="theme-row js-theme-toggle" type="button">
+              <span class="theme-icon" aria-hidden="true"></span>
+              <span class="js-theme-label">Dark mode</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn js-theme-toggle nav__theme" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <a class="btn btn--primary btn--sm nav__cta" href="#contact">Contact Me</a>
+        <button class="icon-btn nav__burger" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+          <span class="burger" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 1. HERO -->
+    <section class="hero" id="home" aria-label="Introduction">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <h1 class="hero__title" id="heroName">Thristan Edrick De Lara</h1>
+          <p class="hero__role hero-in" id="heroRole" style="--d:.7s"></p>
+          <p class="hero__lead hero-in" style="--d:.85s" data-bind="valueStatement"></p>
+          <div class="hero__cta hero-in" style="--d:1s">
+            <a href="#projects" class="btn btn--primary btn--lg">View My Work <span data-icon="arrowRight"></span></a>
+            <a href="#contact" class="btn btn--outline btn--lg">Contact Me</a>
+          </div>
+          <ul class="highlights hero-in" style="--d:1.15s" id="heroHighlights" aria-label="Highlights"></ul>
+        </div>
+        <div class="hero__media hero-in" style="--d:.3s">
+          <div class="photo-glow" aria-hidden="true"></div>
+          <div class="portrait">
+            <img id="heroPhoto" class="js-photo" data-crop="hero" src="" alt="" width="960" height="1200" fetchpriority="high" decoding="async">
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to the About section">
+        <span class="scroll-cue__mouse" aria-hidden="true"><span></span></span>
+        <span class="scroll-cue__text" aria-hidden="true">Scroll</span>
+      </a>
+    </section>
+
+    <!-- 2. ABOUT -->
+    <section class="section section--glow-tr" id="about" aria-labelledby="aboutTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal"><span>About</span></p>
+          <h2 class="section__title reveal" style="--d:.08s" id="aboutTitle">Get to know <span class="grad-text">me</span></h2>
+        </header>
+        <div class="about">
+          <div class="about__bio" id="aboutBio"></div>
+          <aside class="about__facts card reveal" style="--d:.2s" aria-label="Quick facts">
+            <dl class="facts" id="aboutFacts"></dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROJECTS -->
+    <section class="section section--tinted section--glow-bl" id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal"><span>Projects</span></p>
+          <h2 class="section__title reveal" style="--d:.08s" id="projectsTitle">Systems I've <span class="grad-text">built</span></h2>
+          <p class="section__lead reveal" style="--d:.16s">From my machine learning thesis to tools for my school and community. Open a project to see the problem, the solution and the results.</p>
+        </header>
+        <div class="bento" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- 4. SKILLS -->
+    <section class="section section--glow-tr" id="skills" aria-labelledby="skillsTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal"><span>Skills</span></p>
+          <h2 class="section__title reveal" style="--d:.08s" id="skillsTitle">What I <span class="grad-text">work with</span></h2>
+          <p class="section__lead reveal" style="--d:.16s">Tools and technologies I've used in real projects, with an honest look at how well I know each one.</p>
+        </header>
+      </div>
+      <div class="marquee reveal" style="--d:.2s" id="logoMarquee" aria-label="Technologies I use"></div>
+      <div class="container">
+        <div class="skills" id="skillsGroups"></div>
+        <div class="soft-skills">
+          <h3 class="skills__group-title reveal">Soft skills</h3>
+          <ul class="chips" id="softSkills"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ACHIEVEMENTS -->
+    <section class="section section--tinted section--glow-bl" id="achievements" aria-labelledby="achTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal"><span>Achievements</span></p>
+          <h2 class="section__title reveal" style="--d:.08s" id="achTitle">Certificates &amp; <span class="grad-text">milestones</span></h2>
+          <p class="section__lead reveal" style="--d:.16s">Courses and trainings I've completed, newest first. Click a certificate to view it in full.</p>
+        </header>
+        <div class="timeline" id="certTimeline">
+          <div class="timeline__track" aria-hidden="true"><span class="timeline__line" id="timelineLine"></span></div>
+          <ol class="timeline__list" id="certGrid"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT -->
+    <section class="section section--glow-tr" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal"><span>Contact</span></p>
+          <h2 class="section__title reveal" style="--d:.08s" id="contactTitle">Get in <span class="grad-text">touch</span></h2>
+        </header>
+        <div class="contact">
+          <div class="contact__info">
+            <h3 class="contact__heading reveal" id="contactHeading"></h3>
+            <p class="contact__text reveal" style="--d:.06s" id="contactText"></p>
+            <ul class="contact__links" id="contactLinks"></ul>
+          </div>
+          <div class="contact__form-wrap reveal" style="--d:.15s">
+            <p class="contact__intro" id="formIntro"></p>
+            <div class="form-card card">
+              <form class="contact__form" id="contactForm" novalidate>
+                <div class="field">
+                  <input id="cName" name="name" type="text" autocomplete="name" placeholder=" " required aria-describedby="cNameErr">
+                  <label for="cName">Name</label>
+                  <p class="field__error" id="cNameErr"></p>
+                </div>
+                <div class="field">
+                  <input id="cEmail" name="email" type="email" autocomplete="email" placeholder=" " required aria-describedby="cEmailErr">
+                  <label for="cEmail">Email</label>
+                  <p class="field__error" id="cEmailErr"></p>
+                </div>
+                <div class="field field--area">
+                  <textarea id="cMessage" name="message" rows="5" maxlength="1000" placeholder=" " required aria-describedby="cMessageErr cCount"></textarea>
+                  <label for="cMessage">Message</label>
+                  <p class="field__meta"><span class="field__error" id="cMessageErr"></span><span class="field__count" id="cCount">0 / 1000</span></p>
+                </div>
+                <button class="btn btn--primary btn--block" type="submit">Send Message <span data-icon="send"></span></button>
+                <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+              </form>
+              <div class="form-success" id="formSuccess" hidden>
+                <svg class="form-success__check" viewBox="0 0 52 52" aria-hidden="true">
+                  <circle cx="26" cy="26" r="24" fill="none"/>
+                  <path fill="none" d="M15 27l7 7 15-16"/>
+                </svg>
+                <h3 class="form-success__title" tabindex="-1">Message ready!</h3>
+                <p class="form-success__text" id="formSuccessText"></p>
+                <button class="btn btn--outline btn--sm" type="button" id="formReset">Send another message</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> <span data-bind="name">Thristan Edrick De Lara</span></p>
+      <ul class="footer__links" id="footerLinks" aria-label="Social links"></ul>
+    </div>
+  </footer>
+
+  <!-- Back to top with a progress ring -->
+  <a href="#home" class="to-top" id="toTop" aria-label="Back to top">
+    <svg class="to-top__ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle class="to-top__track" cx="24" cy="24" r="21"/>
+      <circle class="to-top__bar" id="toTopBar" cx="24" cy="24" r="21"/>
+    </svg>
+    <span data-icon="arrowUp"></span>
+  </a>
+
+  <!-- Toast (copy email feedback) -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Project case study -->
+  <dialog class="modal" id="projectModal" aria-labelledby="pmTitle">
+    <div class="modal__box">
+      <button class="icon-btn modal__close" type="button" data-close aria-label="Close project details"><span data-icon="x"></span></button>
+      <header class="modal__head">
+        <p class="modal__meta" id="pmMeta"></p>
+        <h3 class="modal__title" id="pmTitle"></h3>
+        <p class="modal__desc" id="pmDesc"></p>
+      </header>
+      <div class="viewer" id="pmViewer">
+        <figure class="viewer__stage">
+          <button class="icon-btn viewer__nav viewer__nav--prev" type="button" id="pmPrev" aria-label="Previous screenshot"><span data-icon="chevL"></span></button>
+          <img id="pmImg" src="" alt="" decoding="async">
+          <button class="icon-btn viewer__nav viewer__nav--next" type="button" id="pmNext" aria-label="Next screenshot"><span data-icon="chevR"></span></button>
+          <figcaption id="pmCaption"></figcaption>
+        </figure>
+        <div class="viewer__thumbs" id="pmThumbs"></div>
+        <p class="viewer__note" id="pmNote" hidden></p>
+      </div>
+      <div class="case" id="pmCase"></div>
+      <div class="modal__actions" id="pmActions"></div>
+    </div>
+  </dialog>
+
+  <!-- Certificate lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="Certificate viewer">
+    <div class="lightbox__box">
+      <div class="lightbox__bar">
+        <p class="lightbox__count" id="lbCount" aria-live="polite"></p>
+        <button class="icon-btn" type="button" data-close aria-label="Close certificate viewer"><span data-icon="x"></span></button>
+      </div>
+      <figure class="lightbox__figure">
+        <button class="icon-btn lightbox__nav lightbox__nav--prev" type="button" id="lbPrev" aria-label="Previous certificate"><span data-icon="chevL"></span></button>
+        <img id="lbImg" src="" alt="" width="1400" height="1000" decoding="async">
+        <button class="icon-btn lightbox__nav lightbox__nav--next" type="button" id="lbNext" aria-label="Next certificate"><span data-icon="chevR"></span></button>
+        <figcaption>
+          <strong id="lbTitle"></strong><span id="lbMeta"></span>
+        </figcaption>
+      </figure>
+    </div>
+  </dialog>
+</body>
+</html>
