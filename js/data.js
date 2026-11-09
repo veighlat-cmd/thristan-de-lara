@@ -317,6 +317,30 @@ window.PORTFOLIO = {
       thumb: "assets/achievements/thumbs/cert-chatgpt-excel-koenig-2024.jpg",
       file: "assets/achievements/cert-chatgpt-excel-koenig-2024.jpg",
     },
+    {
+      title: "Thesis Preparation with the Use of Trending Tools and Industry Practices (Seminar-Workshop)",
+      issuer: "Biliran Province State University · Computer Science Society",
+      date: "2025-10-07",
+      description: "Two-day seminar-workshop on October 6–7, 2025 at the BiPSU Student Center.",
+      thumb: "assets/achievements/thumbs/cert-thesis-preparation-bipsu-css-2025.jpg",
+      file: "assets/achievements/cert-thesis-preparation-bipsu-css-2025.jpg",
+    },
+    {
+      title: "Mastering English Foundations, Upholding Academic Integrity, and Advancing Gender-Fair Writing (Seminar-Workshop)",
+      issuer: "Biliran Province State University · Computer Science Society",
+      date: "2025-04-29",
+      description: "Seminar-workshop held at the BiPSU Student Center, Main Campus, Naval, Biliran.",
+      thumb: "assets/achievements/thumbs/cert-english-academic-integrity-bipsu-css-2025.jpg",
+      file: "assets/achievements/cert-english-academic-integrity-bipsu-css-2025.jpg",
+    },
+    {
+      title: "Unplug & Unwind: Redefining Digital Connection and Safe Spaces (Seminar)",
+      issuer: "Biliran Province State University · Computer Science Society",
+      date: "2024-02-09",
+      description: "Certificate of participation for the one-day seminar.",
+      thumb: "assets/achievements/thumbs/cert-unplug-unwind-bipsu-css-2024.jpg",
+      file: "assets/achievements/cert-unplug-unwind-bipsu-css-2024.jpg",
+    },
   ],
 
   /* ---------- Contact ---------- */
