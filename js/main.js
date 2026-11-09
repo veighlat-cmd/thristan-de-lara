@@ -162,10 +162,10 @@
     $$("[data-bind]").forEach((el) => { const v = p[el.dataset.bind]; if (v != null) el.textContent = v; });
     $("#year").textContent = new Date().getFullYear();
 
-    // name: one span per word so they can animate in; the surname gets the gradient
+    // name: one span per word so they can animate in
     const words = String(p.name).split(/\s+/);
     $("#heroName").innerHTML = words
-      .map((w, i) => `<span class="word${i >= words.length - 2 ? " grad-text" : ""}" style="--i:${i}">${esc(w)}</span>`)
+      .map((w, i) => `<span class="word" style="--i:${i}">${esc(w)}</span>`)
       .join(" ");
 
     const typed = p.typedRoles && p.typedRoles.length ? p.typedRoles : (p.roles || []).slice(1);
