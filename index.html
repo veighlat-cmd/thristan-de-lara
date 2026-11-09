@@ -186,9 +186,36 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__copy">&copy; <span id="year"></span> <span data-bind="name">Thristan Edrick A. De Lara</span></p>
-      <ul class="footer__links" id="footerLinks" aria-label="Social links"></ul>
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="#home" class="footer__name" data-bind="name">Thristan Edrick A. De Lara</a>
+          <p class="footer__tagline" id="footerTagline"></p>
+          <ul class="footer__social" id="footerLinks" aria-label="Social links"></ul>
+        </div>
+        <nav class="footer__col" aria-label="Footer">
+          <h2 class="footer__heading">Quick links</h2>
+          <ul class="footer__list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer__col">
+          <h2 class="footer__heading">Projects</h2>
+          <ul class="footer__list" id="footerProjects"></ul>
+        </div>
+        <div class="footer__col">
+          <h2 class="footer__heading">Get in touch</h2>
+          <ul class="footer__list" id="footerContact"></ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="year"></span> <span data-bind="name">Thristan Edrick A. De Lara</span>. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 

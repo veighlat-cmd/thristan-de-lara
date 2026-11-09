@@ -489,6 +489,18 @@
       .join("");
   }
 
+  function renderFooter() {
+    $("#footerTagline").textContent = (D.profile.roles || []).join(" · ");
+    // project names open that project's case study (see initProjects)
+    $("#footerProjects").innerHTML = [...D.projects]
+      .sort((a, b) => Number(!!b.featured) - Number(!!a.featured))
+      .map((p) => `<li><a href="#projects" data-project="${esc(p.id)}">${esc(p.title)}</a></li>`)
+      .join("");
+    $("#footerContact").innerHTML = socials()
+      .map((s) => `<li><a href="${esc(s.url)}"${linkAttrs(s.url)}${s.handle ? ` title="${esc(s.handle)}"` : ""}>${esc(s.label)}</a></li>`)
+      .join("");
+  }
+
   /* =================================================================
      BEHAVIOUR
      ================================================================= */
@@ -657,6 +669,12 @@
       }));
     }
 
+    $("#footerProjects").addEventListener("click", (e) => {
+      const link = e.target.closest("[data-project]");
+      if (!link) return;
+      e.preventDefault();
+      open(link.dataset.project, link);
+    });
     $("#projectsGrid").addEventListener("click", (e) => {
       if (e.target.closest("a")) return; // demo / code links work normally
       const card = e.target.closest(".project");
@@ -767,6 +785,7 @@
   renderSkills();
   renderCertificates();
   renderContact();
+  renderFooter();
   fillIcons();
 
   network = initNetwork();
