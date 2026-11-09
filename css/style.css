@@ -208,15 +208,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; letter-spacing
   border-bottom-color: var(--border); box-shadow: 0 10px 30px -18px rgba(15, 23, 42, .35);
 }
 .nav__inner { height: 100%; display: flex; align-items: center; gap: 1.5rem; }
-.brand { display: inline-flex; align-items: center; gap: .65rem; margin-right: auto; font: 700 1.02rem/1 var(--font-head); color: var(--text); }
-.brand__name { white-space: nowrap; }
-.brand__mark {
-  display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px;
-  background: var(--grad-btn); background-size: 220% 100%; color: #fff; font: 800 .85rem/1 var(--font-head); letter-spacing: .02em;
-  transition: background-position .5s var(--ease);
-}
-.brand:hover .brand__mark { background-position: 100% 0; }
 .nav__links { display: flex; align-items: center; gap: 1.75rem; }
+.nav__menu { margin-left: auto; }
 .nav__link { position: relative; padding: .4rem 0; font-size: .95rem; font-weight: 500; color: var(--text-muted); transition: color .2s; }
 .nav__link::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; border-radius: 2px; background: var(--grad);
@@ -640,12 +633,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; letter-spacing
   .lightbox__nav--next { right: 8px; }
 }
 
-/* narrow laptops: make room for the full name (Contact is still in the menu) */
-@media (max-width: 1000px) and (min-width: 861px) {
-  .nav__cta { display: none; }
-  .nav__links { gap: 1.3rem; }
-}
-
 @media (max-width: 860px) {
   :root { --nav-h: 62px; }
   .nav__burger { display: inline-grid; }
@@ -681,7 +668,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; letter-spacing
 }
 
 @media (max-width: 600px) {
-  .brand__name { display: none; }
   .hero__cta .btn { flex: 1 1 100%; }
   .highlights li { padding-inline: .75rem; }
   .highlights strong { font-size: 1.25rem; }

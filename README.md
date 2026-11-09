@@ -1,4 +1,4 @@
-# Thristan Edrick De Lara · Portfolio
+# Thristan Edrick A. De Lara · Portfolio
 
 A fast, single-page portfolio built with plain HTML, CSS and vanilla JavaScript. No framework and no build step, so you can host it on GitHub Pages as-is. It has a light and a dark theme.
 

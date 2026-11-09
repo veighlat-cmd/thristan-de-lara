@@ -10,16 +10,15 @@
 window.PORTFOLIO = {
   /* ---------- Basic info ---------- */
   profile: {
-    name: "Thristan Edrick De Lara",
+    name: "Thristan Edrick A. De Lara",
     firstName: "Thristan",
-    initials: "TD",                        // navbar monogram
     course: "Bachelor of Science in Computer Science",
     courseShort: "BS Computer Science",
     school: "Biliran Province State University",
     yearLevel: "4th Year",
     location: "Looc, Cabucgayan, Biliran",
     photo: "assets/profile.jpg",
-    photoAlt: "Thristan Edrick De Lara in a black suit and navy tie",
+    photoAlt: "Thristan Edrick A. De Lara in a black suit and navy tie",
     // How the photo is cropped in the Hero frame (the file itself is never edited).
     // x: move left/right. y: larger = view moves down your body, smaller = more
     // space above your head. zoom: 1 = whole photo; higher = closer.
@@ -43,7 +42,7 @@ window.PORTFOLIO = {
 
     // About Me paragraphs
     bio: [
-      "Hi! I'm Thristan Edrick De Lara, a Bachelor of Science in Computer Science student at Biliran Province State University. I enjoy building things for the web and figuring out how systems work under the hood.",
+      "Hi! I'm Thristan Edrick A. De Lara, a Bachelor of Science in Computer Science student at Biliran Province State University. I enjoy building things for the web and figuring out how systems work under the hood.",
       "Most of my projects started as school requirements and turned into things I'm proud of: management systems, mobile apps and small tools that solve real problems, including my thesis application and two systems built as final requirements: a student voting system and a barangay clean-up organizer.",
       "Outside of coding, I like fishing, playing online games and listening to music. I'm always open to collaborating, learning from others and taking on new challenges.",
     ],
