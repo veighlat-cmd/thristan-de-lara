@@ -523,7 +523,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; letter-spacing
 @keyframes drawCheck { to { stroke-dashoffset: 0; } }
 
 /* ---------- Footer ---------- */
-.footer { position: relative; padding: clamp(48px, 7vw, 72px) 0 1.5rem; border-top: 1px solid var(--border); background: var(--bg-tint); font-size: .92rem; color: var(--text-muted); }
+.footer { position: relative; padding: clamp(48px, 7vw, 72px) 0; border-top: 1px solid var(--border); background: var(--bg-tint); font-size: .92rem; color: var(--text-muted); }
 .footer::before { content: ""; position: absolute; inset: -1px 0 auto; height: 2px; background: var(--grad); opacity: .7; }
 .footer__grid { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr)); gap: 2rem clamp(24px, 4vw, 48px); }
 .footer__name { display: inline-block; font: 800 1.25rem/1.25 var(--font-head); letter-spacing: -.02em; color: var(--text); }
@@ -539,7 +539,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; letter-spacing
 .footer__list { display: grid; gap: .55rem; }
 .footer__list a { display: inline-block; color: var(--text-muted); overflow-wrap: anywhere; transition: color .2s, transform .2s var(--ease); }
 .footer__list a:hover, .footer__list a:focus-visible { color: var(--accent); transform: translateX(3px); }
-.footer__bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 2rem; margin-top: clamp(32px, 5vw, 48px); padding-top: 1.25rem; padding-right: 64px; border-top: 1px solid var(--border); font-size: .85rem; color: var(--text-subtle); }
 
 
 /* ---------- Back to top + toast ---------- */
@@ -703,7 +702,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; letter-spacing
   .bar-row .bar { grid-column: 1 / -1; grid-row: 2; }
   .footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer__about { grid-column: 1 / -1; }
-  .footer__bottom { flex-direction: column; text-align: center; padding-right: 0; padding-bottom: 56px; }
+  .footer { padding-bottom: 88px; }
   .to-top { right: 14px; bottom: 14px; width: 46px; height: 46px; }
   .lightbox__nav { top: auto; bottom: -56px; }
   .lightbox__nav--prev { left: calc(50% - 52px); }

@@ -160,7 +160,6 @@
   function renderHero() {
     const p = D.profile;
     $$("[data-bind]").forEach((el) => { const v = p[el.dataset.bind]; if (v != null) el.textContent = v; });
-    $("#year").textContent = new Date().getFullYear();
 
     // name: one span per word so they can animate in
     const words = String(p.name).split(/\s+/);
