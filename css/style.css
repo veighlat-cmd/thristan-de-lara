@@ -209,6 +209,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; letter-spacing
 }
 .nav__inner { height: 100%; display: flex; align-items: center; gap: 1.5rem; }
 .brand { display: inline-flex; align-items: center; gap: .65rem; margin-right: auto; font: 700 1.02rem/1 var(--font-head); color: var(--text); }
+.brand__name { white-space: nowrap; }
 .brand__mark {
   display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px;
   background: var(--grad-btn); background-size: 220% 100%; color: #fff; font: 800 .85rem/1 var(--font-head); letter-spacing: .02em;
@@ -637,6 +638,12 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; letter-spacing
   .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lightbox__nav--prev { left: 8px; }
   .lightbox__nav--next { right: 8px; }
+}
+
+/* narrow laptops: make room for the full name (Contact is still in the menu) */
+@media (max-width: 1000px) and (min-width: 861px) {
+  .nav__cta { display: none; }
+  .nav__links { gap: 1.3rem; }
 }
 
 @media (max-width: 860px) {
