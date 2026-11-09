@@ -181,41 +181,8 @@
           <div class="contact__info">
             <h3 class="contact__heading reveal" id="contactHeading"></h3>
             <p class="contact__text reveal" style="--d:.06s" id="contactText"></p>
-            <ul class="contact__links" id="contactLinks"></ul>
           </div>
-          <div class="contact__form-wrap reveal" style="--d:.15s">
-            <p class="contact__intro" id="formIntro"></p>
-            <div class="form-card card">
-              <form class="contact__form" id="contactForm" novalidate>
-                <div class="field">
-                  <input id="cName" name="name" type="text" autocomplete="name" placeholder=" " required aria-describedby="cNameErr">
-                  <label for="cName">Name</label>
-                  <p class="field__error" id="cNameErr"></p>
-                </div>
-                <div class="field">
-                  <input id="cEmail" name="email" type="email" autocomplete="email" placeholder=" " required aria-describedby="cEmailErr">
-                  <label for="cEmail">Email</label>
-                  <p class="field__error" id="cEmailErr"></p>
-                </div>
-                <div class="field field--area">
-                  <textarea id="cMessage" name="message" rows="5" maxlength="1000" placeholder=" " required aria-describedby="cMessageErr cCount"></textarea>
-                  <label for="cMessage">Message</label>
-                  <p class="field__meta"><span class="field__error" id="cMessageErr"></span><span class="field__count" id="cCount">0 / 1000</span></p>
-                </div>
-                <button class="btn btn--primary btn--block" type="submit">Send Message <span data-icon="send"></span></button>
-                <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
-              </form>
-              <div class="form-success" id="formSuccess" hidden>
-                <svg class="form-success__check" viewBox="0 0 52 52" aria-hidden="true">
-                  <circle cx="26" cy="26" r="24" fill="none"/>
-                  <path fill="none" d="M15 27l7 7 15-16"/>
-                </svg>
-                <h3 class="form-success__title" tabindex="-1">Message ready!</h3>
-                <p class="form-success__text" id="formSuccessText"></p>
-                <button class="btn btn--outline btn--sm" type="button" id="formReset">Send another message</button>
-              </div>
-            </div>
-          </div>
+          <ul class="contact__links" id="contactLinks"></ul>
         </div>
       </div>
     </section>

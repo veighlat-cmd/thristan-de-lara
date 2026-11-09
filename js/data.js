@@ -347,11 +347,7 @@ window.PORTFOLIO = {
   contact: {
     heading: "Let's work together",
     text: "Have a project, an internship opening or just want to say hi? Send me a message and I'll get back to you as soon as I can.",
-    formIntro: "Open to internships, freelance projects and collaborations.",
     email: "thristanedrickdelara@gmail.com",
-    // "mailto": a valid form opens the visitor's email app with the message filled in.
-    // "none":   a valid form only shows a thank-you message (front-end only).
-    formMode: "mailto",
   },
 
   // logo: a name from the logos list. A link with an empty url ("") is hidden.

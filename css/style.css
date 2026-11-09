@@ -509,10 +509,10 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; letter-spacing
 .cert:hover .cert__view .icon { transform: translateX(3px); }
 
 /* ---------- Contact ---------- */
-.contact { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+.contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
 .contact__heading { font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-weight: 800; }
 .contact__text { margin-top: .75rem; color: var(--text-muted); }
-.contact__links { display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; margin-top: 1.75rem; }
+.contact__links { display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; }
 .contact-item { display: flex; align-items: stretch; gap: .6rem; }
 .contact-link { display: flex; align-items: center; gap: .9rem; flex: 1; min-width: 0; padding: .85rem 1rem; }
 .contact-link:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
@@ -527,49 +527,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; letter-spacing
 .copy-btn.is-copied { color: var(--success); border-color: var(--success); }
 .copy-btn.is-copied .icon { stroke-dasharray: 30; stroke-dashoffset: 30; animation: drawCheck .45s var(--ease) forwards; }
 @keyframes drawCheck { to { stroke-dashoffset: 0; } }
-.contact__intro { margin-bottom: 1rem; font-weight: 600; color: var(--text); }
-
-.form-card { position: relative; overflow: hidden; }
-.contact__form { padding: clamp(1.25rem, 3vw, 2rem); display: grid; gap: 1.1rem; }
-/* floating labels */
-.field { position: relative; }
-.field input, .field textarea {
-  width: 100%; padding: 1.45rem 1rem .55rem; border-radius: var(--radius-sm); border: 1px solid var(--border-strong);
-  background: var(--bg); color: var(--text); transition: border-color .2s, box-shadow .25s; resize: vertical;
-}
-.field textarea { min-height: 150px; padding-top: 1.6rem; }
-.field label {
-  position: absolute; left: 1rem; top: 1rem; font-size: .98rem; color: var(--text-subtle); pointer-events: none;
-  transform-origin: left top; transition: transform .2s var(--ease), color .2s;
-}
-.field input:focus + label, .field input:not(:placeholder-shown) + label,
-.field textarea:focus + label, .field textarea:not(:placeholder-shown) + label { transform: translateY(-.62rem) scale(.78); font-weight: 600; }
-.field input:focus + label, .field textarea:focus + label { color: var(--accent); }
-.field input:focus, .field textarea:focus {
-  outline: none; border-color: var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-soft), 0 6px 24px -10px color-mix(in srgb, var(--accent) 60%, transparent);
-}
-.field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--danger); }
-.field__error { margin-top: .35rem; font-size: .85rem; color: var(--danger); }
-.field__error:empty { display: none; }
-.field__meta { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-top: .35rem; }
-.field__meta .field__error { margin-top: 0; }
-.field__count { margin-left: auto; font-size: .8rem; color: var(--text-subtle); }
-.form__status { font-size: .92rem; text-align: center; }
-.form__status:empty { display: none; }
-.form__status.is-error { color: var(--danger); }
-.form-success {
-  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem;
-  padding: 2rem; text-align: center; background: var(--surface); animation: fadeIn .4s var(--ease);
-}
-.form-success__check { width: 72px; height: 72px; margin-bottom: .5rem; stroke: var(--success); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.form-success__check circle { stroke-dasharray: 151; stroke-dashoffset: 151; animation: drawLine .7s var(--ease) .1s forwards; }
-.form-success__check path { stroke-dasharray: 36; stroke-dashoffset: 36; animation: drawLine .45s var(--ease) .65s forwards; }
-@keyframes drawLine { to { stroke-dashoffset: 0; } }
-@keyframes fadeIn { from { opacity: 0; transform: scale(.98); } }
-.form-success__title { font-size: 1.4rem; font-weight: 800; outline: none; }
-.form-success__text { max-width: 340px; color: var(--text-muted); }
-.form-success .btn { margin-top: .75rem; }
 
 /* ---------- Footer ---------- */
 .footer { padding: 2rem 0; border-top: 1px solid var(--border); background: var(--bg-tint); }

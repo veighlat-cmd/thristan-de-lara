@@ -29,7 +29,6 @@
     chevL: '<polyline points="15 18 9 12 15 6"/>',
     chevR: '<polyline points="9 18 15 12 9 6"/>',
     check: '<polyline points="20 6 9 17 4 12"/>',
-    send: '<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>',
     copy: '<rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>',
     github: '<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>',
     mail: '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>',
@@ -468,7 +467,6 @@
   function renderContact() {
     $("#contactHeading").textContent = D.contact.heading;
     $("#contactText").textContent = D.contact.text;
-    $("#formIntro").textContent = D.contact.formIntro || "";
     $("#contactLinks").innerHTML = socials()
       .map((s, i) => {
         const isMail = /^mailto:/i.test(s.url);
@@ -760,65 +758,6 @@
     });
   }
 
-  /* ---------- Contact form (front-end validation only) ---------- */
-  function initForm() {
-    const form = $("#contactForm");
-    const status = $("#formStatus");
-    const success = $("#formSuccess");
-    const msg = $("#cMessage");
-    const counter = $("#cCount");
-    const rules = {
-      name: (v) => (v.trim().length >= 2 ? "" : "Please enter your name (at least 2 characters)."),
-      email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? "" : "Please enter a valid email address."),
-      message: (v) => (v.trim().length >= 10 ? "" : "Your message should be at least 10 characters long."),
-    };
-    const check = (field) => {
-      const err = rules[field.name](field.value);
-      document.getElementById(field.getAttribute("aria-describedby").split(" ")[0]).textContent = err;
-      field.setAttribute("aria-invalid", err ? "true" : "false");
-      return !err;
-    };
-    const fields = $$("input, textarea", form);
-    fields.forEach((f) => {
-      f.addEventListener("blur", () => { if (f.value) check(f); });
-      f.addEventListener("input", () => { if (f.getAttribute("aria-invalid") === "true") check(f); });
-    });
-    const updateCount = () => { counter.textContent = `${msg.value.length} / ${msg.maxLength}`; };
-    msg.addEventListener("input", updateCount);
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const ok = fields.map(check).every(Boolean);
-      status.className = "form__status";
-      if (!ok) {
-        status.textContent = "Please fix the highlighted fields.";
-        status.classList.add("is-error");
-        fields.find((f) => f.getAttribute("aria-invalid") === "true").focus();
-        return;
-      }
-      status.textContent = "";
-      const data = Object.fromEntries(new FormData(form));
-      const first = data.name.trim().split(/\s+/)[0];
-      if (D.contact.formMode === "mailto" && D.contact.email) {
-        const subject = encodeURIComponent(`Portfolio message from ${data.name.trim()}`);
-        const body = encodeURIComponent(`${data.message.trim()}\n\n${data.name.trim()} (${data.email.trim()})`);
-        window.location.href = `mailto:${D.contact.email}?subject=${subject}&body=${body}`;
-        $("#formSuccessText").textContent = `Thanks, ${first}! Your email app should open with your message ready to send.`;
-      } else {
-        $("#formSuccessText").textContent = `Thanks, ${first}! Your message looks good. I'll get back to you soon.`;
-      }
-      success.hidden = false;
-      $(".form-success__title", success).focus();
-      form.reset();
-      fields.forEach((f) => f.removeAttribute("aria-invalid"));
-      updateCount();
-    });
-    $("#formReset").addEventListener("click", () => {
-      success.hidden = true;
-      $("#cName").focus();
-    });
-  }
-
   /* =================================================================
      BOOT
      ================================================================= */
@@ -840,6 +779,5 @@
   initSpotlight();
   initLightbox();
   initCopy();
-  initForm();
   initReveal();
 })();
